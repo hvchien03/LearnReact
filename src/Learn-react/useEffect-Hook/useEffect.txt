@@ -1,0 +1,19 @@
+Có 3 trương hợp sử dụng useEffect (đối số callback là một hàm 'BẮT BUỘC', đối số thứ 2 là mảng dependency)
+1. useEffect(callback)
+- Gọi callback mỗi khi component re-render
+2. useEffect(callback, [])
+- Chỉ gọi callback 1 lần sau khi component mounted
+3. useEffect(callback, [dependency])
+
+--------------Chung----------------
+// callback luôn được gọi sau khi component được mounted
+// cleanup function luôn được gọi trước khi component unmounted
+// cleanup function luôn được gọi trước khi callback được gọi (Trừ lần mounted)
+
+
+quy trình thực hiện của useEffect
+1. Cập nhật lại state
+2. Cập nhật DOM (mutated)
+3. Render lại UI
+4. Gọi cleanup nếu deps thay đổi
+5. Gọi useEffect callback

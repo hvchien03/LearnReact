@@ -1,0 +1,21 @@
+// useLayoutEffect gần giống 100% với useEffect
+// useLayoutEffect được sử dụng trong 1 số trường hợp đặc biệt
+
+
+so sánh useEffect và useLayoutEffect
+
+quy trình thực hiện của useEffect
+1. Cập nhật lại state
+2. Cập nhật DOM (mutated)
+3. Render lại UI
+4. Gọi cleanup nếu deps thay đổi
+5. Gọi useEffect callback
+
+
+
+quy trình quy trình thực hiện của useLayoutEffect
+1. Cập nhật lại state
+2. Cập nhật DOM (mutated)
+3. Gọi cleanup nếu deps thay đổi (syns - đồng bộ)
+4. Gọi useLayoutEffect callback  (syns - đồng bộ)
+3. Render lại UI
